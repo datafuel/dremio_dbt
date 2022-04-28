@@ -1,0 +1,28 @@
+version: '3'
+services:
+  dbt:
+    image: datafuel/sirene_dbt
+    # build: ./dbt_repo
+    # command: python -u metabase_setup.py
+    container_name: dbt
+    expose:
+      - 4444
+    ports:
+      - 4444:4444
+    volumes:
+      - ./dbt_repo/src:/src
+      - ./dbt_repo/profiles:/root/.dbt
+    environment:
+      DREMIO_DRIVER_PATH: $DREMIO_DRIVER_PATH
+      DREMIO_HOST: $DREMIO_HOST
+      DREMIO_PORT: $DREMIO_PORT
+      DREMIO_ENVIRONMENT: $DREMIO_ENVIRONMENT
+      DREMIO_DATABASE: $DREMIO_DATABASE
+      DREMIO_SCHEMA: $DREMIO_SCHEMA
+      DREMIO_USER: $DREMIO_USER
+      DREMIO_PASSWORD: $DREMIO_PASSWORD
+      DREMIO_MANAGED_OR_UNMANAGED: $DREMIO_MANAGED_OR_UNMANAGED
+      PROJECT_GITHUB_REPO: $PROJECT_GITHUB_REPO
+      PROJECT_REPO: $PROJECT_REPO
+    stdin_open: true
+    tty: true

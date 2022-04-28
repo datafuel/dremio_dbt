@@ -1,0 +1,4 @@
+SQLAlchemy
+dbt-dremio
+pyodbc
+requests

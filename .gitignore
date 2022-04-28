@@ -1,0 +1,9 @@
+.env
+
+## dbt
+dbt_repo/src/dbt_packages/**
+dbt_repo/src/dbt_modules/**
+dbt_repo/src/logs/**
+**/.user.yml
+# Python
+.DS_Store

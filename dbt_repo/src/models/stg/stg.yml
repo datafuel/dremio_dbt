@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: stg
+    database: minio-datalake
+    schema: datalake-bucket
+    tables:
+      - name: sirene
+        identifier: stg."SIREN_PACA"
