@@ -45,6 +45,7 @@ def add_datalake():
     try:
         response = rq.post(url=SOURCE_URL, headers=headers, json=payload)
         response.raise_for_status()
+        print('Successfully added minio-datalake to Dremio !')
     except rq.HTTPError as err:
         if response.status_code != 409:
             raise err
