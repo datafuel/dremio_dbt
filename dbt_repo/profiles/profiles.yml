@@ -18,7 +18,7 @@ dremio:
       host: "{{ env_var('DREMIO_HOST') }}"
       port: "{{ env_var('DREMIO_PORT') | as_number }}"
       environment: "{{ env_var('DREMIO_ENVIRONMENT') }}"
-      database: minio-datalake
+      database: "{{ env_var('DREMIO_DATALAKE') }}"
       schema: ods
       user: "{{ env_var('DREMIO_USER') }}"
       password: "{{ env_var('DREMIO_PASSWORD') }}"
